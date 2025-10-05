@@ -1,11 +1,12 @@
-//your JS code here. If required.
-let titleInput = document.querySelector("#title");
-let authorInput = document.getElementById("author");
-let isbnInput = document.getElementById("isbn");
-const submitBtn = document.querySelector("#submit");
-const bookList = document.querySelector("#book-list");
+// Get references to input fields and table body
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const isbnInput = document.getElementById("isbn");
+const submitBtn = document.getElementById("submit");
+const bookList = document.getElementById("book-list");
 
-function addToBookList(title, author, isbn) {
+// Function to add a book to the table
+function addBook(title, author, isbn) {
     const row = document.createElement("tr");
 
     const titleCell = document.createElement("td");
@@ -18,14 +19,13 @@ function addToBookList(title, author, isbn) {
     isbnCell.innerText = isbn;
 
     const deleteCell = document.createElement("td");
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = 'X';
-    deleteButton.classList.add("delete"); // ✅ Added this line (fix)
-    deleteButton.addEventListener("click", () => {
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete";
+    deleteBtn.innerText = "Clear";
+    deleteBtn.addEventListener("click", () => {
         row.remove();
     });
-
-    deleteCell.appendChild(deleteButton);
+    deleteCell.appendChild(deleteBtn);
 
     row.appendChild(titleCell);
     row.appendChild(authorCell);
@@ -35,18 +35,17 @@ function addToBookList(title, author, isbn) {
     bookList.appendChild(row);
 }
 
+// Event listener for submit button
 submitBtn.addEventListener("click", () => {
     const title = titleInput.value.trim();
     const author = authorInput.value.trim();
     const isbn = isbnInput.value.trim();
 
     if (title && author && isbn) {
-        addToBookList(title, author, isbn);
+        addBook(title, author, isbn);
 
+        // Clear input fields
         titleInput.value = "";
         authorInput.value = "";
-        isbnInput.value = "";
-    } else {
-        alert("Please fill all details");
-    }
-});
+        is
+

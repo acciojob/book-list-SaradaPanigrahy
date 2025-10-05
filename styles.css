@@ -1,26 +1,47 @@
-/*  your css code here. If applicable */
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
 .container {
-    width: 500px;
-    padding: 20px;
+    width: 600px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #007BFF; /* Optional styling for "Book" */
 }
 
 .form-group {
     display: flex;
-    gap: 16px;
     flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
 }
 
 button {
-    width: 20%;
+    width: 150px;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-table {
+.table {
     width: 100%;
-    margin-top: 24px;
     border-collapse: collapse;
 }
 
-table, th, td {
+.table, th, td {
     border: 1px solid black;
 }
 
@@ -28,3 +49,12 @@ th, td {
     padding: 10px;
     text-align: left;
 }
+
+.delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
