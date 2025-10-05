@@ -20,9 +20,10 @@ function addToBookList(title, author, isbn) {
     const deleteCell = document.createElement("td");
     const deleteButton = document.createElement("button");
     deleteButton.textContent = 'X';
+    deleteButton.classList.add("delete"); // ✅ Added this line (fix)
     deleteButton.addEventListener("click", () => {
         row.remove();
-    })
+    });
 
     deleteCell.appendChild(deleteButton);
 
@@ -39,14 +40,13 @@ submitBtn.addEventListener("click", () => {
     const author = authorInput.value.trim();
     const isbn = isbnInput.value.trim();
 
-    if(title && author && isbn) {
+    if (title && author && isbn) {
         addToBookList(title, author, isbn);
 
         titleInput.value = "";
         authorInput.value = "";
         isbnInput.value = "";
+    } else {
+        alert("Please fill all details");
     }
-    else {
-        alert("Pleae fill all details");
-    }
-})
+});
